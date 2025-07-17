@@ -10,16 +10,62 @@
       font-family: 'Helvetica', 'Arial', sans-serif;
       color: #222;
       margin: 0;
-      padding: 2em;
+      padding: 0;
     }
+
+    /* Breaking News Bar */
+    .breaking-news-bar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #d60000;
+      color: white;
+      padding: 10px 0;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .breaking-news-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 15s linear infinite;
+      padding-left: 100%;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .news-label {
+      font-weight: bold;
+      margin-right: 20px;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .news-text {
+      display: inline;
+    }
+
+    /* Page Content */
     h1 {
       text-align: center;
-      margin-bottom: 2em;
+      margin: 80px 0 2em; /* 上部マージンを調整 */
     }
+
     .article-list {
       max-width: 600px;
       margin: 0 auto;
+      padding: 0 2em;
     }
+
     .article-list a {
       display: block;
       text-decoration: none;
@@ -30,6 +76,7 @@
       border-bottom: 1px solid #ddd;
       transition: all 0.3s;
     }
+
     .article-list a:hover {
       background-color: #f5f5f5;
       padding-left: 1em;
@@ -37,13 +84,22 @@
   </style>
 </head>
 <body>
+
+  <!-- Breaking News Bar -->
+  <div class="breaking-news-bar">
+    <div class="breaking-news-content">
+      <span class="news-label">BREAKING</span>
+      <span class="news-text">新しい記事「article4」が公開されました！ | HUG最新ニュースをチェック！ | サイトデザインを更新しました。</span>
+    </div>
+  </div>
+
   <h1>HUG</h1>
   <div class="article-list">
-    <a href="pdfs/article4.pdf" target="_blank">2025.07.13 New article4</a>>
+    <a href="pdfs/article4.pdf" target="_blank">2025.07.13 New article4</a>
     <a href="pdfs/article3.pdf" target="_blank">2025.07.15 article3</a>
     <a href="pdfs/article2.pdf" target="_blank">2025.07.14 article2</a>
     <a href="pdfs/article1.pdf" target="_blank">2025.07.13 article1</a>
-    
   </div>
+
 </body>
 </html>
