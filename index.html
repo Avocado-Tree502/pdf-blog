@@ -48,6 +48,19 @@
     color: #555;         /* 少し薄い色で説明らしさを出す */
     margin-top: 0.5em;
     }
+    .fixed-message {
+      position: fixed;
+      bottom: 60px; /* フッターの高さ分だけ上にずらす */
+      left: 0;
+      width: 100%;
+      background: #f8d24e;
+      color: #333;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 16px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
     footer {
       position: fixed;
       bottom: 0;
@@ -63,9 +76,9 @@
 <body>
   <h1>この世界を歩くとき，</h1>
   <p class="subtitle">–　ライフレッスン，あなたに安らぎの言葉を。　–</p>
-  <p class="description">
+  <p>
     ＰＤＦファイルを閲覧するには，Ａｄｏｂｅ　Ａｃｒｏｂａｔ　Ｒｅａｄｅｒをダウンロードしてください。</p>
-  <p class="description">
+  <p>
     <a href="https://www.adobe.com/" target="_blank">Ａｄｏｂｅ．ｃｏｍ</a>から無料でダウンロードできます。
   </p>
   <div class="article-list">
@@ -73,6 +86,9 @@
     <a href="pdfs/article4.pdf" target="_blank">令和７年７月２１日: article4</a>
     <a href="pdfs/article3.pdf" target="_blank">令和７年７月２０日: article3</a>
     <a href="pdfs/July 18, 2025.pdf" target="_blank">令和７年７月１８日: Beyond Endurance</a>
+  </div>
+  <div class="fixed-message">
+    これはフッターの直上に固定されたメッセージです
   </div>
   <footer>
     <p>&copy; 令和７（２０２５）年 この世界を歩くとき，．　Ａｌｌ　ｒｉｇｈｔｓ　ｒｅｓｅｒｖｅｄ．</p>
