@@ -16,24 +16,6 @@
       text-align: center;
       margin-bottom: 0.2em;
     }
-    .article-list {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .article-list a {
-      display: block;
-      text-decoration: none;
-      color: #333;
-      font-size: 1.2em;
-      margin: 1em 0;
-      padding: 0.5em;
-      border-bottom: 1px solid #ddd;
-      transition: all 0.3s;
-    }
-    .article-list a:hover {
-      background-color: #f5f5f5;
-      padding-left: 1em;
-    }
     p.subtitle {
       text-align: center;
       font-size: 1.0rem;
@@ -43,30 +25,46 @@
       letter-spacing: 0.03em;
     }
     .description {
-    text-align: center;  /* 中央揃えにしたいなら */
-    font-size: 1.0rem;   /* 少し小さめにするなど調整可 */
-    color: #555;         /* 少し薄い色で説明らしさを出す */
-    margin-top: 0.5em;
+      text-align: center;
+      font-size: 1.0rem;
+      color: #555;
+      margin-top: 0.5em;
     }
-    .pdf-icon {
+    .article-list {
+      max-width: 600px;
+      margin: 2em auto;
+    }
+
+    /* --- ここからPDFリンクのFlexboxレイアウト --- */
+    .article-item {
+      display: flex;
+      align-items: center; /* アイコンとテキストの縦位置を揃える */
+      margin: 1em 0;
+      padding: 0.5em;
+      border-bottom: 1px solid #ddd;
+      transition: all 0.3s;
+    }
+    .article-item:hover {
+      background-color: #f5f5f5;
+      padding-left: 1em;
+    }
+    .article-item svg.pdf-icon {
       width: 20px;
       height: 20px;
-      vertical-align: middle;
-      margin-right: 5px;
+      margin-right: 8px;
+      flex-shrink: 0; /* アイコンのサイズを固定 */
     }
-    .article-list svg.pdf-icon,
-    .article-list a {
-      display: inline-block;
-      vertical-align: middle; /* 高さを揃える */
+    .article-item a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.2em;
+      flex: 1;
     }
-    .article-list svg.pdf-icon {
-      width: 20px; /* アイコンの大きさ調整 */
-      height: 20px;
-      margin-right: 5px; /* テキストとの余白 */
-   }
+    /* --- ここまでPDFリンクのFlexboxレイアウト --- */
+
     .fixed-message {
       position: fixed;
-      bottom: 60px; /* フッターの高さ分だけ上にずらす */
+      bottom: 60px;
       left: 0;
       width: 100%;
       background: #ffffff;
@@ -88,56 +86,68 @@
       line-height: 2em;
     }
   </style>
-  
 </head>
 <body>
   <h1>この世界を歩くとき，</h1>
   <p class="subtitle">–　安らぎの言葉でライフレッスン　–</p>
-  <p class="description">
-  </p>
+  <p class="description"></p>
+
   <div class="article-list">
-    <!-- PDFアイコン (SVG) -->
-    <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-      <path fill="red" d="M181.9 256.2c-6.7 16.1-13.7 31.9-20.9 47.2l-17.8-47.2h38.7zM373.1 
-        105l-98.1-98A24 24 0 0 0 256 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 
-        48h288c26.5 0 48-21.5 48-48V128c0-6.4-2.5-12.5-6.9-17zM128 
-        392V280h14.1l36.2 93.2L214.5 
-        280H228v112h-19.4v-66.8l-25.8 66.8h-14.2l-25.8-66.7V392H128z"/>
-    </svg>
-    <a href="pdfs/July 22, 2025.pdf" target="_blank">令和７年７月２２日: The Restaurant I Found While Seeking Solace</a>
-    <!-- PDFアイコン (SVG) -->
-    <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-      <path fill="red" d="M181.9 256.2c-6.7 16.1-13.7 31.9-20.9 47.2l-17.8-47.2h38.7zM373.1 
-        105l-98.1-98A24 24 0 0 0 256 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 
-        48h288c26.5 0 48-21.5 48-48V128c0-6.4-2.5-12.5-6.9-17zM128 
-        392V280h14.1l36.2 93.2L214.5 
-        280H228v112h-19.4v-66.8l-25.8 66.8h-14.2l-25.8-66.7V392H128z"/>
-    </svg><a href="pdfs/article4.pdf" target="_blank">令和７年７月２１日: article4</a>
-    <!-- PDFアイコン (SVG) -->
-    <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-      <path fill="red" d="M181.9 256.2c-6.7 16.1-13.7 31.9-20.9 47.2l-17.8-47.2h38.7zM373.1 
-        105l-98.1-98A24 24 0 0 0 256 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 
-        48h288c26.5 0 48-21.5 48-48V128c0-6.4-2.5-12.5-6.9-17zM128 
-        392V280h14.1l36.2 93.2L214.5 
-        280H228v112h-19.4v-66.8l-25.8 66.8h-14.2l-25.8-66.7V392H128z"/>
-    </svg><a href="pdfs/article3.pdf" target="_blank">令和７年７月２０日: article3</a>
-    <!-- PDFアイコン (SVG) -->
-    <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-      <path fill="red" d="M181.9 256.2c-6.7 16.1-13.7 31.9-20.9 47.2l-17.8-47.2h38.7zM373.1 
-        105l-98.1-98A24 24 0 0 0 256 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 
-        48h288c26.5 0 48-21.5 48-48V128c0-6.4-2.5-12.5-6.9-17zM128 
-        392V280h14.1l36.2 93.2L214.5 
-        280H228v112h-19.4v-66.8l-25.8 66.8h-14.2l-25.8-66.7V392H128z"/>
-    </svg><a href="pdfs/July 18, 2025.pdf" target="_blank">令和７年７月１８日: Beyond Endurance</a>
+    <div class="article-item">
+      <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="red" d="M181.9 256.2c-6.7 16.1-13.7 31.9-20.9 47.2l-17.8-47.2h38.7zM373.1 
+          105l-98.1-98A24 24 0 0 0 256 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 
+          48h288c26.5 0 48-21.5 48-48V128c0-6.4-2.5-12.5-6.9-17zM128 
+          392V280h14.1l36.2 93.2L214.5 
+          280H228v112h-19.4v-66.8l-25.8 66.8h-14.2l-25.8-66.7V392H128z"/>
+      </svg>
+      <a href="pdfs/July 22, 2025.pdf" target="_blank">令和７年７月２２日: The Restaurant I Found While Seeking Solace</a>
+    </div>
+
+    <div class="article-item">
+      <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="red" d="M181.9 256.2c-6.7 16.1-13.7 31.9-20.9 47.2l-17.8-47.2h38.7zM373.1 
+          105l-98.1-98A24 24 0 0 0 256 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 
+          48h288c26.5 0 48-21.5 48-48V128c0-6.4-2.5-12.5-6.9-17zM128 
+          392V280h14.1l36.2 93.2L214.5 
+          280H228v112h-19.4v-66.8l-25.8 66.8h-14.2l-25.8-66.7V392H128z"/>
+      </svg>
+      <a href="pdfs/article4.pdf" target="_blank">令和７年７月２１日: article4</a>
+    </div>
+
+    <div class="article-item">
+      <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="red" d="M181.9 256.2c-6.7 16.1-13.7 31.9-20.9 47.2l-17.8-47.2h38.7zM373.1 
+          105l-98.1-98A24 24 0 0 0 256 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 
+          48h288c26.5 0 48-21.5 48-48V128c0-6.4-2.5-12.5-6.9-17zM128 
+          392V280h14.1l36.2 93.2L214.5 
+          280H228v112h-19.4v-66.8l-25.8 66.8h-14.2l-25.8-66.7V392H128z"/>
+      </svg>
+      <a href="pdfs/article3.pdf" target="_blank">令和７年７月２０日: article3</a>
+    </div>
+
+    <div class="article-item">
+      <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="red" d="M181.9 256.2c-6.7 16.1-13.7 31.9-20.9 47.2l-17.8-47.2h38.7zM373.1 
+          105l-98.1-98A24 24 0 0 0 256 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 
+          48h288c26.5 0 48-21.5 48-48V128c0-6.4-2.5-12.5-6.9-17zM128 
+          392V280h14.1l36.2 93.2L214.5 
+          280H228v112h-19.4v-66.8l-25.8 66.8h-14.2l-25.8-66.7V392H128z"/>
+      </svg>
+      <a href="pdfs/July 18, 2025.pdf" target="_blank">令和７年７月１８日: Beyond Endurance</a>
+    </div>
   </div>
+
   <div class="fixed-message">
     <p>
-    ＰＤＦファイルを閲覧するには，Ａｄｏｂｅ　Ａｃｒｏｂａｔ　Ｒｅａｄｅｒを<a href="https://www.adobe.com/" target="_blank">ダウンロード</a>（外部リンクへ移動します。）してください。</p>
+      ＰＤＦファイルを閲覧するには，Ａｄｏｂｅ　Ａｃｒｏｂａｔ　Ｒｅａｄｅｒを
+      <a href="https://www.adobe.com/" target="_blank">ダウンロード</a>
+      （外部リンクへ移動します。）してください。
+    </p>
   </div>
+
   <footer>
     <p>&copy; 令和７（２０２５）年 この世界を歩くとき，．　Ａｌｌ　ｒｉｇｈｔｓ　ｒｅｓｅｒｖｅｄ．</p>
   </footer>
-</body>
-</html>
 </body>
 </html>
