@@ -88,9 +88,25 @@
       line-height: 2em;
       font-size: 0.8rem;
     }
+    .top-link {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .top-link::before {
+      content: "↑ ";
+      font-size: 1rem;
+    }
+
+    .top-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
-<body>
+<body id="top"> <!-- ← ページ先頭のID -->
   <h1>この世界を歩くとき，</h1>
   <p class="subtitle">–　安らぎの言葉でライフレッスン　–</p>
   <p class="description"></p>
@@ -163,6 +179,7 @@
 
   <footer>
     <p>&copy; 令和７（２０２５）年 この世界を歩くとき，．　Ａｌｌ　ｒｉｇｈｔｓ　ｒｅｓｅｒｖｅｄ．</p>
+    <a href="#top" class="top-link">Topへ戻る</a> <!-- ← 矢印付きのリンク -->
   </footer>
 </body>
 </html>
