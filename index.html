@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
   <title>この世界を歩くとき，</title>
   <style>
     body {
@@ -88,6 +89,31 @@
       line-height: 2em;
       font-size: 0.8rem;
     }
+    /* ページトップボタン */
+#page_top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+#page_top.show {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+#page_top:hover {
+  opacity: 1;
+}
   </style>
 </head>
 <body>
@@ -164,5 +190,24 @@
   <footer>
     <p>&copy; 令和７（２０２５）年 この世界を歩くとき，．　Ａｌｌ　ｒｉｇｈｔｓ　ｒｅｓｅｒｖｅｄ．</p>
   </footer>
+　<div id="page_top"><i class="fas fa-angle-up"></i> Topへ</div>
+
+  <script>
+  const pageTop = document.getElementById("page_top");
+
+  // スクロールで表示・非表示を切り替え
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      pageTop.classList.add("show");
+    } else {
+      pageTop.classList.remove("show");
+    }
+  });
+
+  // スムーズにトップへ戻る
+  pageTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
 </body>
 </html>
